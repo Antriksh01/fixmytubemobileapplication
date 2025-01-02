@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -18,73 +18,76 @@ import ToolsScreen from "../screens/ToolsScreen";
 import CustomHeader from "../components/CustomHeader";
 import BottomTabs from "./BottomTabs";
 import ServicesScreen from "../screens/ServicesScreen";
+import LoginScreen from "../screens/LoginScreen";
+import { useSelector } from "react-redux";
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
-// Drawer Navigator
-function AppDrawer() {
-  return (
-    <Drawer.Navigator
-      screenOptions={{
-        header: ({ navigation, route }) => (
-          <CustomHeader navigation={navigation} title={route.name} />
-        ),
-      }}
-    >
-      <Drawer.Screen
-        name="Home"
-        component={BottomTabs}
-        options={{
-          headerShown: false, // Hide drawer header, use custom header
-        }}
-        initialParams={{ screen: "Home" }} // Ensure Home tab is active
-      />
-      <Drawer.Screen
-        name="Profile"
-        component={BottomTabs}
-        options={{
-          headerShown: false,
-        }}
-        initialParams={{ screen: "Profile" }}
-      />
-      <Drawer.Screen
-        name="Tools"
-        component={BottomTabs}
-        options={{
-          headerShown: false,
-        }}
-        initialParams={{ screen: "Tools" }}
-      />
-
-      <Drawer.Screen
-        name="Services"
-        component={BottomTabs}
-        options={{
-          headerShown: false,
-        }}
-        initialParams={{ screen: "Services" }}
-      />
-    </Drawer.Navigator>
-  );
-}
-
-// Stack Navigator for Initial Setup
-function AppStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Drawer"
-        component={AppDrawer}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
-  );
-}
-
-// Main App Navigation
 export default function StackNavigator() {
+  const user = useSelector((state) => state?.user?.currentUser);
+  console.log(user);
+  // const [user, setUser] = useState(false); // User state
+
+  // Drawer Navigator
+  function AppDrawer() {
+    return (
+      <Drawer.Navigator
+        screenOptions={{
+          header: ({ navigation, route }) => (
+            <CustomHeader navigation={navigation} title={route.name} />
+          ),
+        }}
+      >
+        <Drawer.Screen
+          name="Home"
+          component={BottomTabs}
+          options={{ headerShown: false }}
+        />
+        {!user && (
+          <Drawer.Screen
+            name="Login"
+            component={BottomTabs}
+            options={{
+              headerShown: false,
+            }}
+            initialParams={{ screen: "Login" }}
+          />
+        )}
+        <Drawer.Screen
+          name="Tools"
+          component={BottomTabs}
+          options={{
+            headerShown: false,
+          }}
+          initialParams={{ screen: "Tools" }}
+        />
+        <Drawer.Screen
+          name="Services"
+          component={BottomTabs}
+          options={{
+            headerShown: false,
+          }}
+          initialParams={{ screen: "Services" }}
+        />
+      </Drawer.Navigator>
+    );
+  }
+
+  // Stack Navigator for Initial Setup
+  function AppStack() {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Drawer"
+          component={AppDrawer}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    );
+  }
+
   return (
     <NavigationContainer>
       <AppStack />

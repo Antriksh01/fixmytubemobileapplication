@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, Text, StyleSheet } from "react-native";
 import CustomHeader from "../components/CustomHeader"; // Import CustomHeader
@@ -7,10 +7,14 @@ import ProfileScreen from "../screens/ProfileScreen";
 import ToolsScreen from "../screens/ToolsScreen";
 import ServicesScreen from "../screens/ServicesScreen";
 import { Ionicons } from "@expo/vector-icons";
+import LoginScreen from "../screens/LoginScreen";
+import { useSelector } from "react-redux";
 
 const Tab = createBottomTabNavigator();
 
 function BottomTabs() {
+  const user = useSelector((state) => state?.user?.currentUser);
+  console.log(user);
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -22,12 +26,14 @@ function BottomTabs() {
 
           if (route.name === "Home") {
             iconName = focused ? "home-sharp" : "home-outline"; // Active and inactive icons
-          } else if (route.name === "Profile") {
-            iconName = focused ? "person-sharp" : "person-outline";
           } else if (route.name === "Tools") {
             iconName = focused ? "construct" : "construct-outline";
           } else if (route.name === "Services") {
             iconName = focused ? "briefcase" : "briefcase-outline";
+          } else if (user && route.name === "Profile") {
+            iconName = focused ? "person-sharp" : "person-outline";
+          } else if (!user && route.name === "Login") {
+            iconName = focused ? "log-in-sharp" : "log-in-outline";
           }
 
           return <Ionicons name={iconName} size={24} color={color} />;
@@ -47,13 +53,7 @@ function BottomTabs() {
           tabBarLabel: "Dashboard", // Custom label
         }}
       />
-      <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          tabBarLabel: "My Profile",
-        }}
-      />
+
       <Tab.Screen
         name="Tools"
         component={ToolsScreen}
@@ -68,6 +68,23 @@ function BottomTabs() {
           tabBarLabel: "Services",
         }}
       />
+      {user ? (
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarLabel: "My Profile",
+          }}
+        />
+      ) : (
+        <Tab.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{
+            tabBarLabel: "Login",
+          }}
+        />
+      )}
     </Tab.Navigator>
   );
 }
