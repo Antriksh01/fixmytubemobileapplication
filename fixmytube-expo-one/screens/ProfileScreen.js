@@ -15,6 +15,7 @@ import { useNavigation } from "@react-navigation/native";
 import { clearUser } from "../redux/user/userSlice";
 import axios from "axios";
 import * as Clipboard from "expo-clipboard";
+import UserWallet from "../components/UserWallet";
 
 const ProfileScreen = () => {
   const user = useSelector((state) => state?.user?.currentUser);
@@ -201,16 +202,20 @@ const ProfileScreen = () => {
 
       {/* Wallet Balance */}
       <View style={styles.walletContainer}>
-        <Text style={styles.walletTitle}>Your Wallet Balance</Text>
+        <UserWallet
+          walletBalance={walletBalance}
+          walletRefCost={walletRefCost}
+        />
+        {/* <Text style={styles.walletTitle}>Your Wallet Balance</Text>
         <Text style={styles.walletAmount}>
           ₹{walletBalance?.length === 0 ? 0 : walletBalance[0]?.balance}
-        </Text>
-        <TouchableOpacity style={styles.withdrawButton}>
+        </Text> */}
+        {/* <TouchableOpacity style={styles.withdrawButton}>
           <Text style={styles.withdrawButtonText}>Request Withdrawal</Text>
         </TouchableOpacity>
         <Text style={styles.walletNote}>
           Note: Minimum withdrawal amount is 1000
-        </Text>
+        </Text> */}
       </View>
 
       {/* Profile Section */}

@@ -14,8 +14,10 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Foundation from "@expo/vector-icons/Foundation";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = ({ navigation }) => {
+  const navigationRaw = useNavigation();
   return (
     <>
       <ScrollView
@@ -32,7 +34,10 @@ const HomeScreen = ({ navigation }) => {
             </LinearGradient>
           </View>
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("AI Social Media Cloner")}
+            >
               <LinearGradient
                 colors={["#ff3f34", "#f7d794"]}
                 style={styles.gradient}
@@ -43,7 +48,10 @@ const HomeScreen = ({ navigation }) => {
                 </Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("AI Youtube Video Cloner")}
+            >
               <LinearGradient
                 colors={["#ff3f34", "#f7d794"]}
                 style={styles.gradient}
@@ -54,7 +62,10 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("AI Local Video Cloner")}
+            >
               <LinearGradient
                 colors={["#ff3f34", "#f7d794"]}
                 style={styles.gradient}
@@ -63,7 +74,10 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.cardText}>AI Local Video Cloner</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("AI Text To Speech")}
+            >
               <LinearGradient
                 colors={["#ff3f34", "#f7d794"]}
                 style={styles.gradient}
@@ -90,7 +104,12 @@ const HomeScreen = ({ navigation }) => {
           </View>
           {/* <Text style={styles.heading}>Generator Tools</Text> */}
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("YouTube Meta Data Generator")
+              }
+            >
               <LinearGradient
                 colors={["#16a085", "#f7d794"]}
                 style={styles.gradient}
@@ -99,7 +118,12 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.cardText}>Youtube Meta Data Generator</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("YouTube Hashtag Generator")
+              }
+            >
               <LinearGradient
                 colors={["#16a085", "#f7d794"]}
                 style={styles.gradient}
@@ -110,7 +134,10 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("YouTube Tag Generator")}
+            >
               <LinearGradient
                 colors={["#16a085", "#f7d794"]}
                 style={styles.gradient}
@@ -119,7 +146,12 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.cardText}>Youtube Tag Generator</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("YouTube Embed Code Generator")
+              }
+            >
               <LinearGradient
                 colors={["#16a085", "#f7d794"]}
                 style={styles.gradient}
@@ -144,7 +176,10 @@ const HomeScreen = ({ navigation }) => {
           </View>
           {/* <Text style={styles.heading}>Youtube SEO Tools</Text> */}
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("YouTube Video Statistics")}
+            >
               <LinearGradient
                 colors={["#0abde3", "#c8d6e5"]}
                 style={styles.gradient}
@@ -153,7 +188,12 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.cardText}>Youtube Video Statistics</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("YouTube Channel Statistics")
+              }
+            >
               <LinearGradient
                 colors={["#0abde3", "#c8d6e5"]}
                 style={styles.gradient}
@@ -164,7 +204,12 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("YouTube Channel Monetization Checker")
+              }
+            >
               <LinearGradient
                 colors={["#0abde3", "#c8d6e5"]}
                 style={styles.gradient}
@@ -179,7 +224,10 @@ const HomeScreen = ({ navigation }) => {
                 </Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("AI Thumbnails Cloner")}
+            >
               <LinearGradient
                 colors={["#0abde3", "#c8d6e5"]}
                 style={styles.gradient}
@@ -202,7 +250,12 @@ const HomeScreen = ({ navigation }) => {
           </View>
           {/* <Text style={styles.heading}>Extractor Tools</Text> */}
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("YouTube Channel ID Finder")
+              }
+            >
               <LinearGradient
                 colors={["#ff9f43", "#c8d6e5"]}
                 style={styles.gradient}
@@ -211,7 +264,10 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.cardText}>Youtube Channel ID Finder</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("Youtube Tag Extractor")}
+            >
               <LinearGradient
                 colors={["#ff9f43", "#c8d6e5"]}
                 style={styles.gradient}
@@ -222,7 +278,10 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("YouTube Title Extractor")}
+            >
               <LinearGradient
                 colors={["#ff9f43", "#c8d6e5"]}
                 style={styles.gradient}
@@ -235,7 +294,12 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.cardText}>YouTube Title Extractor</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("YouTube Description Extractor")
+              }
+            >
               <LinearGradient
                 colors={["#ff9f43", "#c8d6e5"]}
                 style={styles.gradient}
@@ -259,7 +323,12 @@ const HomeScreen = ({ navigation }) => {
           </View>
           {/* <Text style={styles.heading}>Other Tools</Text> */}
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("YouTube Timestamp Link Generator")
+              }
+            >
               <LinearGradient
                 colors={["#81ecec", "#c8d6e5"]}
                 style={styles.gradient}
@@ -270,7 +339,12 @@ const HomeScreen = ({ navigation }) => {
                 </Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("Youtube Video Count Checker")
+              }
+            >
               <LinearGradient
                 colors={["#81ecec", "#c8d6e5"]}
                 style={styles.gradient}
@@ -281,7 +355,12 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("YouTube Channel Age Checker")
+              }
+            >
               <LinearGradient
                 colors={["#81ecec", "#c8d6e5"]}
                 style={styles.gradient}
@@ -290,7 +369,10 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.cardText}>YouTube Channel Age Checker</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("Youtube Comment Picker")}
+            >
               <LinearGradient
                 colors={["#81ecec", "#c8d6e5"]}
                 style={styles.gradient}
@@ -301,7 +383,10 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("YouTube Money Calculator")}
+            >
               <LinearGradient
                 colors={["#81ecec", "#c8d6e5"]}
                 style={styles.gradient}
@@ -310,7 +395,10 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.cardText}>YouTube Money Calculator</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("Case Convertor")}
+            >
               <LinearGradient
                 colors={["#81ecec", "#c8d6e5"]}
                 style={styles.gradient}
@@ -335,7 +423,10 @@ const HomeScreen = ({ navigation }) => {
             </LinearGradient>
           </View>
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("Create Youtube Channel")}
+            >
               <LinearGradient
                 colors={["#81ecec", "#ffcccc"]}
                 style={styles.gradient}
@@ -344,7 +435,10 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.cardText}>Create Youtube Channel</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("Create Channel Logo")}
+            >
               <LinearGradient
                 colors={["#81ecec", "#ffcccc"]}
                 style={styles.gradient}
@@ -355,7 +449,10 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("Create Thumbnails")}
+            >
               <LinearGradient
                 colors={["#81ecec", "#ffcccc"]}
                 style={styles.gradient}
@@ -364,7 +461,10 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.cardText}>Create Thumbnails</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigationRaw.navigate("Create Banner")}
+            >
               <LinearGradient
                 colors={["#81ecec", "#ffcccc"]}
                 style={styles.gradient}
@@ -375,7 +475,12 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.cardContainer}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("YouTube Channel Customization")
+              }
+            >
               <LinearGradient
                 colors={["#81ecec", "#ffcccc"]}
                 style={styles.gradient}
@@ -386,7 +491,12 @@ const HomeScreen = ({ navigation }) => {
                 </Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() =>
+                navigationRaw.navigate("Youtube Channel Monetization")
+              }
+            >
               <LinearGradient
                 colors={["#81ecec", "#ffcccc"]}
                 style={styles.gradient}
